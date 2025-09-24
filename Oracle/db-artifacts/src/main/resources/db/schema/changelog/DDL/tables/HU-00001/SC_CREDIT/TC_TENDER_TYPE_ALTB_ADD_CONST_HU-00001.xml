@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd ">
+    <changeSet id="HU-00001_TAG_ALTB_CONST_TC_TENDER_TYPE" author="1048168">
+        <tagDatabase tag="HU-00001"/>
+    </changeSet>
+    <changeSet id="HU-00001_ID_ALTB_PK_PK_TENDER_TYPE" author="1048168">
+        <addPrimaryKey columnNames="FI_TENDER_TYPE_ID" constraintName="PK_TENDER_TYPE" forIndexSchemaName="SC_CREDIT" forIndexName="IXPK_TENDER_TYPE" schemaName="SC_CREDIT" tableName="TC_TENDER_TYPE"/>
+        <rollback>
+            <dropPrimaryKey constraintName="PK_TENDER_TYPE" schemaName="SC_CREDIT" tableName="TC_TENDER_TYPE" dropIndex="false"/>
+        </rollback>
+    </changeSet>
+    <changeSet id="HU-00001_ID_ALTB_FK_FK_TENDER_TYPE_01" author="1048168">
+        <addForeignKeyConstraint baseTableSchemaName="SC_CREDIT" baseTableName="TC_TENDER_TYPE" baseColumnNames="FI_TENDER_CATEGORY_TYPE_ID" constraintName="FK_TENDER_TYPE_01" referencedTableSchemaName="SC_CREDIT" referencedTableName="TC_TENDER_CATEGORY_TYPE" referencedColumnNames="FI_TENDER_CATEGORY_TYPE_ID"/>
+        <rollback>
+            <dropForeignKeyConstraint baseTableSchemaName="SC_CREDIT" baseTableName="TC_TENDER_TYPE" constraintName="FK_TENDER_TYPE_01"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

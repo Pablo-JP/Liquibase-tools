@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd ">
+    <changeSet id="HU-00001_TAG_CRTB_TA_LOAN_MISCELLAN_OPERATIONS" author="1048168">
+        <tagDatabase tag="HU-00001"/>
+    </changeSet>
+    <changeSet id="HU-00001_ID_CRTB_TA_LOAN_MISCELLAN_OPERATIONS" author="1048168">
+        <createTable tablespace="USERS" schemaName="SC_CREDIT" tableName="TA_LOAN_MISCELLAN_OPERATIONS">
+            <column name="FI_LOAN_ID" type="NUMBER(15)" remarks="">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FI_ADMIN_CENTER_ID" type="NUMBER(8)" remarks="">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FI_LOAN_OPERATION_ID" type="NUMBER(15)" remarks="">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FI_MISCELLAN_OPERATIONS_ID" type="NUMBER(3)" remarks="">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FD_APPLICATION_DATE" type="DATE" remarks="">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FI_TRANSACTION" type="NUMBER(33)" remarks="">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FC_IP_ADDRESS" type="VARCHAR2(39)" remarks="">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FC_DEVICE" type="VARCHAR2(50)" remarks="">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FI_STATUS" type="NUMBER(2)" defaultValueComputed="1" remarks="">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FC_USER" type="VARCHAR2(30)" remarks="">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FD_CREATED_DATE" type="DATE" defaultValueComputed="SYSDATE" remarks="">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FD_MODIFICATION_DATE" type="DATE" defaultValueComputed="SYSDATE" remarks="">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

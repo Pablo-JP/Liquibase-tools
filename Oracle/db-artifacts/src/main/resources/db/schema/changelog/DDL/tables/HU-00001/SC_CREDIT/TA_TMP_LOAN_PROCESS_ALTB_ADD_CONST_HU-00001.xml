@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd ">
+    <changeSet id="HU-00001_TAG_ALTB_CONST_TA_TMP_LOAN_PROCESS" author="1048168">
+        <tagDatabase tag="HU-00001"/>
+    </changeSet>
+    <changeSet id="HU-00001_ID_ALTB_PK_PK_TMP_LOAN_PROCESS" author="1048168">
+        <addPrimaryKey columnNames="FI_LOAN_ID, FI_ADMIN_CENTER_ID, FI_PROCESS, FI_TRACK" constraintName="PK_TMP_LOAN_PROCESS" forIndexSchemaName="SC_CREDIT" forIndexName="IXPK_TMP_LOAN_PROCESS" schemaName="SC_CREDIT" tableName="TA_TMP_LOAN_PROCESS"/>
+        <rollback>
+            <dropPrimaryKey constraintName="PK_TMP_LOAN_PROCESS" schemaName="SC_CREDIT" tableName="TA_TMP_LOAN_PROCESS" dropIndex="false"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

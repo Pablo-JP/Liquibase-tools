@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd ">
+    <changeSet id="HU-00001_TAG_CR_SEQ_SE_LOAN_STATUS_DETAIL" author="1048168">
+        <tagDatabase tag="HU-00001"/>
+    </changeSet>
+    <changeSet id="HU-00001_ID_SEQ_SE_LOAN_STATUS_DETAIL" author="1048168">
+        <createSequence schemaName="SC_CREDIT" sequenceName="SE_LOAN_STATUS_DETAIL" startValue="1" incrementBy="1" maxValue="99999999999999999999" minValue="1" cacheSize="20" cycle="false"/>
+        <rollback>
+            <dropSequence schemaName="SC_CREDIT" sequenceName="SE_LOAN_STATUS_DETAIL"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

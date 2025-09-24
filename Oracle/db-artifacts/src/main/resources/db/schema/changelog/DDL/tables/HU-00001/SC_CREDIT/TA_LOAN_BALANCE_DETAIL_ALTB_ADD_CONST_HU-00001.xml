@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd ">
+    <changeSet id="HU-00001_TAG_ALTB_CONST_TA_LOAN_BALANCE_DETAIL" author="1048168">
+        <tagDatabase tag="HU-00001"/>
+    </changeSet>
+    <changeSet id="HU-00001_ID_ALTB_PK_PK_LOAN_BALANCE_DETAIL" author="1048168">
+        <addPrimaryKey columnNames="FI_LOAN_ID, FI_ADMIN_CENTER_ID, FI_LOAN_BALANCE_ID, FI_LOAN_CONCEPT_ID" constraintName="PK_LOAN_BALANCE_DETAIL" forIndexSchemaName="SC_CREDIT" forIndexName="IXPK_LOAN_BALANCE_DETAIL" schemaName="SC_CREDIT" tableName="TA_LOAN_BALANCE_DETAIL"/>
+        <rollback>
+            <dropPrimaryKey constraintName="PK_LOAN_BALANCE_DETAIL" schemaName="SC_CREDIT" tableName="TA_LOAN_BALANCE_DETAIL" dropIndex="false"/>
+        </rollback>
+    </changeSet>
+    <changeSet id="HU-00001_ID_ALTB_FK_FK_LOAN_BALANCE_DETAIL_01" author="1048168">
+        <addForeignKeyConstraint baseTableSchemaName="SC_CREDIT" baseTableName="TA_LOAN_BALANCE_DETAIL" baseColumnNames="FI_LOAN_BALANCE_ID, FI_LOAN_ID, FI_ADMIN_CENTER_ID" constraintName="FK_LOAN_BALANCE_DETAIL_01" referencedTableSchemaName="SC_CREDIT" referencedTableName="TA_LOAN_BALANCE" referencedColumnNames="FI_LOAN_BALANCE_ID, FI_LOAN_ID, FI_ADMIN_CENTER_ID"/>
+        <rollback>
+            <dropForeignKeyConstraint baseTableSchemaName="SC_CREDIT" baseTableName="TA_LOAN_BALANCE_DETAIL" constraintName="FK_LOAN_BALANCE_DETAIL_01"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

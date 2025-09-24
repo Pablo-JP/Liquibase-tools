@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd ">
+    <changeSet id="HU-00001_TAG_CRTB_TA_PWO_AMOUNT_DETAIL" author="1048168">
+        <tagDatabase tag="HU-00001"/>
+    </changeSet>
+    <changeSet id="HU-00001_ID_CRTB_TA_PWO_AMOUNT_DETAIL" author="1048168">
+        <createTable tablespace="USERS" remarks="Table containing the details of the Potential Write-Off amounts" schemaName="SC_CREDIT" tableName="TA_PWO_AMOUNT_DETAIL">
+            <column name="FI_ADMIN_CENTER_ID" type="NUMBER(8)" remarks="Loan Management Center">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FI_LOAN_ID" type="NUMBER(15)" remarks="Loan Identifier">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FN_PAY_OFF_AMOUNT" type="NUMBER(12,2)" remarks="Amount when the loan defaults">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FN_PWO_EXT_PAYMENT" type="NUMBER(12,2)" remarks="Amount of the required payment extension">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FN_AMOUNT_PAID" type="NUMBER(12,2)" remarks="Amount Paid">
+                <constraints nullable="true"/>
+            </column>
+            <column name="FN_PWO_MIN_PAYMENT" type="NUMBER(12,2)" remarks="Amount Remaining to Pay">
+                <constraints nullable="true"/>
+            </column>
+            <column name="FI_ADD_EXTENSION" type="NUMBER(3)" remarks="Number of Extensions Added">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FD_PWO_DATE" type="DATE" remarks="Potential Write-Off Deadline Date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FC_USER" type="VARCHAR2(30)" defaultValueComputed="USER" remarks="">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FD_CREATED_DATE" type="DATE" defaultValueComputed="SYSDATE" remarks="">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FD_MODIFICATION_DATE" type="DATE" defaultValueComputed="SYSDATE" remarks="">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FI_LOAN_OPERATION_ID" type="NUMBER(15)" defaultValueComputed="0" remarks="Loan Operation Number Identifier">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

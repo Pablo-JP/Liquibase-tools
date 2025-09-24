@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd ">
+    <changeSet id="HU-00001_TAG_CRTB_TA_LOAN_OPERATION" author="1048168">
+        <tagDatabase tag="HU-00001"/>
+    </changeSet>
+    <changeSet id="HU-00001_ID_CRTB_TA_LOAN_OPERATION" author="1048168">
+        <createTable tablespace="USERS" schemaName="SC_CREDIT" tableName="TA_LOAN_OPERATION">
+            <column name="FI_LOAN_ID" type="NUMBER(15)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FI_ADMIN_CENTER_ID" type="NUMBER(8)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FI_LOAN_OPERATION_ID" type="NUMBER(15)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FI_COUNTRY_ID" type="NUMBER(3)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FI_COMPANY_ID" type="NUMBER(3)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FI_BUSINESS_UNIT_ID" type="NUMBER(5)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FI_OPERATION_TYPE_ID" type="NUMBER(5)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FI_TRANSACTION" type="NUMBER(33)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="FC_PLATFORM_ID" type="VARCHAR2(6)" defaultValueComputed="'0'">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FC_SUB_PLATFORM_ID" type="VARCHAR2(6)" defaultValueComputed="'0'">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FN_OPERATION_AMOUNT" type="NUMBER(12,2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FD_APPLICATION_DATE" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FD_OPERATION_DATE" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FI_STATUS" type="NUMBER(3)" defaultValueComputed="1">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FC_END_USER" type="VARCHAR2(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FC_UUID_TRACKING" type="VARCHAR2(36)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FC_GPS_LATITUDE" type="VARCHAR2(15)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FC_GPS_LONGITUDE" type="VARCHAR2(15)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FC_IP_ADDRESS" type="VARCHAR2(39)" defaultValueComputed="'127.0.0.1'">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FC_DEVICE" type="VARCHAR2(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FC_USER" type="VARCHAR2(30)" defaultValueComputed="USER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FD_CREATED_DATE" type="DATE" defaultValueComputed="SYSDATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FD_MODIFICATION_DATE" type="DATE" defaultValueComputed="SYSDATE">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <modifySql>
+            <append value=" PARTITION BY RANGE (FI_ADMIN_CENTER_ID) ( PARTITION PAR_LOANOP_P1 VALUES LESS THAN (351) TABLESPACE USERS,  PARTITION PAR_LOANOP_P2 VALUES LESS THAN (702) TABLESPACE USERS,  PARTITION PAR_LOANOP_P3 VALUES LESS THAN (1053) TABLESPACE USERS,  PARTITION PAR_LOANOP_P4 VALUES LESS THAN (1404) TABLESPACE USERS,  PARTITION PAR_LOANOP_P5 VALUES LESS THAN (1755) TABLESPACE USERS,  PARTITION PAR_LOANOP_P6 VALUES LESS THAN (2106) TABLESPACE USERS,  PARTITION PAR_LOANOP_P7 VALUES LESS THAN (2457) TABLESPACE USERS,  PARTITION PAR_LOANOP_P8 VALUES LESS THAN (2808) TABLESPACE USERS,  PARTITION PAR_LOANOP_P9 VALUES LESS THAN (3159) TABLESPACE USERS,  PARTITION PAR_LOANOP_P10 VALUES LESS THAN (3510) TABLESPACE USERS,  PARTITION PAR_LOANOP_P11 VALUES LESS THAN (3861) TABLESPACE USERS,  PARTITION PAR_LOANOP_P12 VALUES LESS THAN (4212) TABLESPACE USERS,  PARTITION PAR_LOANOP_P13 VALUES LESS THAN (4563) TABLESPACE USERS,  PARTITION PAR_LOANOP_P14 VALUES LESS THAN (4914) TABLESPACE USERS,  PARTITION PAR_LOANOP_P15 VALUES LESS THAN (5265) TABLESPACE USERS,  PARTITION PAR_LOANOP_P16 VALUES LESS THAN (5616) TABLESPACE USERS,  PARTITION PAR_LOANOP_P17 VALUES LESS THAN (5967) TABLESPACE USERS,  PARTITION PAR_LOANOP_P18 VALUES LESS THAN (6318) TABLESPACE USERS,  PARTITION PAR_LOANOP_P19 VALUES LESS THAN (6669) TABLESPACE USERS,  PARTITION PAR_LOANOP_P20 VALUES LESS THAN (7020) TABLESPACE USERS,  PARTITION PAR_LOANOP_P21 VALUES LESS THAN (7371) TABLESPACE USERS,  PARTITION PAR_LOANOP_P22 VALUES LESS THAN (7722) TABLESPACE USERS,  PARTITION PAR_LOANOP_P23 VALUES LESS THAN (8073) TABLESPACE USERS,  PARTITION PAR_LOANOP_P24 VALUES LESS THAN (8424) TABLESPACE USERS,  PARTITION PAR_LOANOP_P25 VALUES LESS THAN (8775) TABLESPACE USERS,  PARTITION PAR_LOANOP_P26 VALUES LESS THAN (9126) TABLESPACE USERS,  PARTITION PAR_LOANOP_P27 VALUES LESS THAN (9477) TABLESPACE USERS,  PARTITION PAR_LOANOP_P28 VALUES LESS THAN (9828) TABLESPACE USERS,  PARTITION PAR_LOANOP_P29 VALUES LESS THAN (10179) TABLESPACE USERS,  PARTITION PAR_LOANOP_P30 VALUES LESS THAN (MAXVALUE) TABLESPACE USERS) ENABLE ROW MOVEMENT "/>
+        </modifySql>
+    </changeSet>
+    <changeSet id="HU-00001_ID_REMARKS_TA_LOAN_OPERATION" author="1048168">
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_OPERATION" columnName="FI_LOAN_ID" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_OPERATION" columnName="FI_ADMIN_CENTER_ID" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_OPERATION" columnName="FI_LOAN_OPERATION_ID" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_OPERATION" columnName="FI_COUNTRY_ID" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_OPERATION" columnName="FI_COMPANY_ID" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_OPERATION" columnName="FI_BUSINESS_UNIT_ID" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_OPERATION" columnName="FI_OPERATION_TYPE_ID" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_OPERATION" columnName="FI_TRANSACTION" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_OPERATION" columnName="FC_PLATFORM_ID" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_OPERATION" columnName="FC_SUB_PLATFORM_ID" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_OPERATION" columnName="FN_OPERATION_AMOUNT" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_OPERATION" columnName="FD_APPLICATION_DATE" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_OPERATION" columnName="FD_OPERATION_DATE" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_OPERATION" columnName="FI_STATUS" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_OPERATION" columnName="FC_END_USER" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_OPERATION" columnName="FC_UUID_TRACKING" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_OPERATION" columnName="FC_GPS_LATITUDE" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_OPERATION" columnName="FC_GPS_LONGITUDE" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_OPERATION" columnName="FC_IP_ADDRESS" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_OPERATION" columnName="FC_DEVICE" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_OPERATION" columnName="FC_USER" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_OPERATION" columnName="FD_CREATED_DATE" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_OPERATION" columnName="FD_MODIFICATION_DATE" remarks=""/>
+        <rollback/>
+    </changeSet>
+</databaseChangeLog>

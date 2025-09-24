@@ -1,0 +1,32 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd"
+>
+
+    <changeSet author="1048168" id="HU-00001_CR-FN_FN_SEL_LOAN_BALANCE_DET_JSON" context="development">
+        <tagDatabase tag="HU-00001"/>
+    </changeSet>
+
+
+    <changeSet id="HU-00001" author="1048168" context="development">
+
+        <sqlFile
+                dbms="oracle"
+                path="src/main/resources/db/schema/changelog/DDL/functions/HU-00001/sql/SC_CREDIT/FN_SEL_LOAN_BALANCE_DET_JSON/FN_SEL_LOAN_BALANCE_DET_JSON_CRFN_HU-00001.sql"
+                encoding="UTF-8"
+                endDelimiter="/"
+        />
+
+        <rollback>
+            <sqlFile
+                    dbms="oracle"
+                    path="src/main/resources/db/schema/changelog/DDL/functions/HU-00001/sql/SC_CREDIT/FN_SEL_LOAN_BALANCE_DET_JSON/FN_SEL_LOAN_BALANCE_DET_JSON_CRFN_HU-00001_ROLLBACK.sql"
+                    encoding="UTF-8"
+                    endDelimiter=";"
+            />
+        </rollback>
+
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd ">
+    <changeSet id="HU-00001_TAG_ALTB_CONST_TC_BALANCE_CATEGORY" author="1048168">
+        <tagDatabase tag="HU-00001"/>
+    </changeSet>
+    <changeSet id="HU-00001_ID_ALTB_PK_PK_BALANCE_CATEGORY" author="1048168">
+        <addPrimaryKey columnNames="FI_BALANCE_CATEGORY_ID" constraintName="PK_BALANCE_CATEGORY" forIndexSchemaName="SC_CREDIT" forIndexName="IXPK_BALANCE_CATEGORY" schemaName="SC_CREDIT" tableName="TC_BALANCE_CATEGORY"/>
+        <rollback>
+            <dropPrimaryKey constraintName="PK_BALANCE_CATEGORY" schemaName="SC_CREDIT" tableName="TC_BALANCE_CATEGORY" dropIndex="false"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

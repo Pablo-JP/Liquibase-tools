@@ -1,0 +1,125 @@
+CREATE OR REPLACE  PROCEDURE SC_CREDIT.SP_SEL_LOAN_STATUS (
+   PA_LOAN_ID                IN      SC_CREDIT.TA_LOAN_STATUS.FI_LOAN_ID%TYPE
+  ,PA_LOAN_ADMIN_CENTER_ID   IN      SC_CREDIT.TA_LOAN_STATUS.FI_ADMIN_CENTER_ID%TYPE
+  ,PA_DATE_OPERATION         IN      VARCHAR2
+  ,PA_CUR_RESULTS            OUT     SC_CREDIT.PA_TYPES.TYP_CURSOR
+  ,PA_STATUS_CODE            OUT     NUMBER
+  ,PA_STATUS_MSG             OUT     VARCHAR2)
+IS
+/************************************************************************************************************************************************************************************************************************************************
+PROJECT:            PURPOSE_LIFE_LOAN_CYCLE
+DESCRIPTION:        THIS STORE PROCEDURE EXECUTES A CONSULT ON TA_LOAN TABLE, TA_PAYMENT_SCHEDULE, TA_LOAN_BALANCE AND TA_LOAN_BALANCE_DETAIL AND RETURNS A CURSOR WITH THE INFORMATION OF THE LOANS WITH DUE DATE SMALLER THAN LOAN_STATUS_DATE
+PRECONDITIONS:      IT MUST RECEIVE A LOAN_ID AND A LOAN_ADMIN_CENTER_ID
+CREATOR:            CESAR MEDINA
+CREATED DATE:       13/11/2024
+MODIFICATION DATE:  15/01/2025
+USER MODIFICATION:  AIXA SARMIENTO
+*************************************************************************************************************************************************************************************************************************************************/
+   CSL_ARROW        CONSTANT VARCHAR2(5)    := '-->';					-- AESTHETICS SIGN
+   CSL_DATE         CONSTANT VARCHAR2(12)   := 'MM/DD/YYYY';			-- CONSTANT FOR DATE CONVERSION
+   CSL_0            CONSTANT SIMPLE_INTEGER := 0;						-- CONSTANT WITH VALUE EQUAL TO 0
+   CSL_1            CONSTANT SIMPLE_INTEGER := 1;						-- CONSTANT WITH VALUE EQUAL TO 1
+   CSL_3            CONSTANT SIMPLE_INTEGER := 3;						-- CONSTANT WITH VALUE EQUAL TO 3
+   CSL_SUCCESS_MSG  CONSTANT VARCHAR2(10)   := 'SUCCESS';				-- MESSAGE SUCCESS
+   CSL_PKG          CONSTANT SIMPLE_INTEGER := 1;						-- CONSTANT WITH VALUE EQUAL TO 1, FOR THE SP_BATCH_ERROR_LOG
+   CSL_DATE_FORMAT  CONSTANT VARCHAR2(25)   := 'MM/DD/YYYY hh24:mi:ss';	-- CONSTANT FOR DATE CONVERSION WITH HOURS
+   VL_JSON_PAYMENTS VARCHAR2(4000);
+   VL_JSON_BALANCE_DETAIL VARCHAR2(4000);
+
+BEGIN
+   SELECT
+      COALESCE(
+         NULLIF(
+            JSON_ARRAYAGG (
+               JSON_OBJECT(
+                        'paymentNumberId' VALUE B.FI_PAYMENT_NUMBER_ID,
+                        'paymentAmount'   VALUE B.FN_PAYMENT_AMOUNT,
+                        'dueDate'         VALUE TO_CHAR(B.FD_DUE_DATE,CSL_DATE),
+                        'status'          VALUE B.FI_STATUS
+               )
+            ), '[{paymentNumberId:null,paymentAmount:null,dueDate:null,status:null}]'
+         ),'[]'
+      ) AS FJ_PAYMENTS
+     INTO VL_JSON_PAYMENTS
+     FROM SC_CREDIT.TA_PAYMENT_SCHEDULE B
+    WHERE B.FI_LOAN_ID = PA_LOAN_ID
+      AND B.FI_ADMIN_CENTER_ID = PA_LOAN_ADMIN_CENTER_ID
+      AND B.FD_DUE_DATE <=  TO_DATE(PA_DATE_OPERATION,CSL_DATE_FORMAT)
+      AND B.FI_PMT_SCHEDULE_STATUS_ID IN (CSL_1,CSL_3)
+      AND B.FI_STATUS = CSL_1;
+
+   SELECT
+      COALESCE(
+         NULLIF(
+            JSON_ARRAYAGG (
+               JSON_OBJECT(
+                           'loanConceptId' VALUE E.FI_LOAN_CONCEPT_ID,
+                           'itemAmount'    VALUE E.FN_ITEM_AMOUNT
+               )
+            ), '[{loanConceptId:null,itemAmount:null}]'
+         ),'[]'
+      ) AS FJ_BALANCE_DETAIL
+      INTO VL_JSON_BALANCE_DETAIL
+      FROM SC_CREDIT.TA_LOAN A
+INNER JOIN SC_CREDIT.TA_LOAN_BALANCE D
+        ON A.FI_LOAN_ID = D.FI_LOAN_ID
+       AND A.FI_ADMIN_CENTER_ID = D.FI_ADMIN_CENTER_ID
+       AND A.FI_CURRENT_BALANCE_SEQ = D.FI_BALANCE_SEQ
+INNER JOIN SC_CREDIT.TA_LOAN_BALANCE_DETAIL E
+        ON D.FI_LOAN_ID = E.FI_LOAN_ID
+       AND D.FI_ADMIN_CENTER_ID = E.FI_ADMIN_CENTER_ID
+       AND D.FI_LOAN_BALANCE_ID = E.FI_LOAN_BALANCE_ID
+     WHERE D.FI_ADMIN_CENTER_ID = PA_LOAN_ADMIN_CENTER_ID
+       AND D.FI_LOAN_ID = PA_LOAN_ID;
+
+   OPEN PA_CUR_RESULTS FOR
+      SELECT A.FI_LOAN_ID,
+			 A.FI_ADMIN_CENTER_ID,
+			 A.FI_PRODUCT_ID,
+             A.FI_RULE_ID,
+             A.FC_CUSTOMER_ID,
+             A.FI_LOAN_STATUS_ID,
+             TO_CHAR(A.FD_LOAN_STATUS_DATE,CSL_DATE_FORMAT) AS FD_LOAN_STATUS_DATE,
+             A.FI_NUMBER_OF_PAYMENTS,
+             A.FN_PRINCIPAL_AMOUNT,
+             A.FN_PRINCIPAL_BALANCE,
+             A.FN_FINANCE_CHARGE_BALANCE,
+             A.FN_ADDITIONAL_CHARGE_BALANCE,
+             VL_JSON_PAYMENTS AS FJ_PAYMENTS,
+             C.FN_PAY_OFF_AMOUNT,
+             C.FI_ADD_EXTENSION,
+             C.FN_AMOUNT_PAID,
+             C.FN_PWO_MIN_PAYMENT,
+             C.FN_PWO_EXT_PAYMENT,
+             TO_CHAR(C.FD_PWO_DATE,CSL_DATE_FORMAT) AS FD_PWO_DATE,
+             VL_JSON_BALANCE_DETAIL AS FJ_BALANCE_DETAIL
+        FROM SC_CREDIT.TA_LOAN A
+        LEFT JOIN SC_CREDIT.TA_PWO_AMOUNT_DETAIL C
+          ON C.FI_LOAN_ID = A.FI_LOAN_ID
+         AND C.FI_ADMIN_CENTER_ID = A.FI_ADMIN_CENTER_ID
+       WHERE A.FI_LOAN_ID = PA_LOAN_ID
+         AND A.FI_ADMIN_CENTER_ID = PA_LOAN_ADMIN_CENTER_ID;
+
+   PA_STATUS_CODE   := CSL_0;
+   PA_STATUS_MSG    := CSL_SUCCESS_MSG;
+
+EXCEPTION
+    WHEN OTHERS THEN
+       PA_STATUS_CODE := SQLCODE;
+       PA_STATUS_MSG  := SQLERRM || CSL_ARROW || DBMS_UTILITY.FORMAT_ERROR_BACKTRACE;
+
+       SC_CREDIT.SP_BATCH_ERROR_LOG (UTL_CALL_STACK.SUBPROGRAM(CSL_1)(CSL_PKG)
+                                     ,SQLCODE
+                                     ,SQLERRM
+                                     ,DBMS_UTILITY.FORMAT_ERROR_BACKTRACE
+                                     ,CSL_0
+                                     ,PA_STATUS_CODE || PA_STATUS_MSG
+                                     );
+END SP_SEL_LOAN_STATUS;
+
+/
+
+GRANT EXECUTE ON SC_CREDIT.SP_SEL_LOAN_STATUS TO USRNCPCREDIT1
+/
+GRANT EXECUTE ON SC_CREDIT.SP_SEL_LOAN_STATUS TO USRBTCCREDIT1
+/

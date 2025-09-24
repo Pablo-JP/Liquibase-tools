@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd ">
+    <changeSet id="HU-00001_TAG_CRTB_TC_CONCEPT_EXPRESSION" author="1048168">
+        <tagDatabase tag="HU-00001"/>
+    </changeSet>
+    <changeSet id="HU-00001_ID_CRTB_TC_CONCEPT_EXPRESSION" author="1048168">
+        <createTable tablespace="USERS" schemaName="SC_CREDIT" tableName="TC_CONCEPT_EXPRESSION">
+            <column name="FI_CONCEPT_EXPRESSION_ID" type="NUMBER(3)" remarks="Concept expression identifier">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FC_CONCEPT_EXPRESSION_DESC" type="VARCHAR2(50)" remarks="Concetp expression desc">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FI_STATUS" type="NUMBER(2)" defaultValueComputed="1" remarks="Status that indicates whether the record is active or deleted">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FC_USER" type="VARCHAR2(30)" defaultValueComputed="USER" remarks="Modification user">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FD_CREATED_DATE" type="DATE" defaultValueComputed="SYSDATE" remarks="Creation date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FD_MODIFICATION_DATE" type="DATE" defaultValueComputed="SYSDATE" remarks="Modification date">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

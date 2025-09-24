@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd ">
+    <include file="src/main/resources/db/schema/changelog/DDL/users/HU-00001/SC_CREDIT_CRT_USER_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/users/HU-00001/USRPURPOSEWS_CRT_USER_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/users/HU-00001/USRNCPCREDIT1_CRT_USER_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/users/HU-00001/USRPRODWS_CRT_USER_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/users/HU-00001/USRCREDIT02_CRT_USER_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/users/HU-00001/USRBTCCREDIT1_CRT_USER_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_SUBTERM_TYPE_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TC_SUBTERM_TYPE_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_SUBTERM_TYPE_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_PRODUCT_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TC_PRODUCT_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_PRODUCT_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_TERM_TYPE_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TC_TERM_TYPE_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_TERM_TYPE_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_TENDER_CATEGORY_TYPE_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TC_TENDER_CATEGORY_TYPE_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_TENDER_CATEGORY_TYPE_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_TENDER_TYPE_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TC_TENDER_TYPE_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_TENDER_TYPE_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_CANCELLATION_TYPE_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TC_CANCELLATION_TYPE_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_CANCELLATION_TYPE_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_PAYMENT_TENDER_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TC_PAYMENT_TENDER_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_PAYMENT_TENDER_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_PAYMENT_TYPE_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TC_PAYMENT_TYPE_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_PAYMENT_TYPE_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_ACCRUED_TYPE_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TC_ACCRUED_TYPE_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_ACCRUED_TYPE_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_BALANCE_CATEGORY_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TC_BALANCE_CATEGORY_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_BALANCE_CATEGORY_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_LOAN_CONCEPT_TYPE_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TC_LOAN_CONCEPT_TYPE_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_LOAN_CONCEPT_TYPE_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_LOAN_CONCEPT_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TC_LOAN_CONCEPT_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_LOAN_CONCEPT_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_COUNTRY_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TC_COUNTRY_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_COUNTRY_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_COMPANY_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TC_COMPANY_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_COMPANY_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_BUSINESS_UNIT_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TC_BUSINESS_UNIT_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_BUSINESS_UNIT_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_CENTER_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TC_CENTER_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_CENTER_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_OPERATION_SIGN_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TC_OPERATION_SIGN_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_OPERATION_SIGN_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_OPERATION_TYPE_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TC_OPERATION_TYPE_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_OPERATION_TYPE_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_LOAN_STATUS_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TC_LOAN_STATUS_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_LOAN_STATUS_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_ACTION_DETAIL_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TC_ACTION_DETAIL_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_ACTION_DETAIL_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_TRIGGER_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TC_TRIGGER_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_TRIGGER_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_LOAN_STATUS_TRIGGER_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TC_LOAN_STATUS_TRIGGER_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_LOAN_STATUS_TRIGGER_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TA_LOAN_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_OPERATION_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TA_LOAN_OPERATION_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_OPERATION_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_OPERATION_DETAIL_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TA_LOAN_OPERATION_DETAIL_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_OPERATION_DETAIL_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_STATUS_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TA_LOAN_STATUS_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_STATUS_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_OPERATION_TENDER_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TA_LOAN_OPERATION_TENDER_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_OPERATION_TENDER_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_BALANCE_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TA_LOAN_BALANCE_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_BALANCE_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_BALANCE_DETAIL_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TA_LOAN_BALANCE_DETAIL_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_BALANCE_DETAIL_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_INSURANCE_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TA_LOAN_INSURANCE_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_INSURANCE_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_CANCELLATION_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TA_LOAN_CANCELLATION_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_CANCELLATION_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_GLOBAL_DETAIL_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TA_LOAN_GLOBAL_DETAIL_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_GLOBAL_DETAIL_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_PAYMENT_TYPE_DETAIL_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TA_PAYMENT_TYPE_DETAIL_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_PAYMENT_TYPE_DETAIL_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_OPERATION_PARENT_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TA_LOAN_OPERATION_PARENT_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_OPERATION_PARENT_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_SCORING_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TA_LOAN_SCORING_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_SCORING_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_SCORING_DETAIL_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TA_LOAN_SCORING_DETAIL_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_SCORING_DETAIL_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_PAYMENT_SCHEDULE_STATUS_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TC_PAYMENT_SCHEDULE_STATUS_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_PAYMENT_SCHEDULE_STATUS_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_SCHEDULE_TYPE_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TC_SCHEDULE_TYPE_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_SCHEDULE_TYPE_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_PAYMENT_SCHEDULE_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TA_PAYMENT_SCHEDULE_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_PAYMENT_SCHEDULE_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_PAYMENT_SCHEDULE_FEE_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TA_PAYMENT_SCHEDULE_FEE_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_PAYMENT_SCHEDULE_FEE_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_INTEREST_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TA_LOAN_INTEREST_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_INTEREST_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_STATUS_DETAIL_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TA_LOAN_STATUS_DETAIL_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_STATUS_DETAIL_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_PWO_AMOUNT_DETAIL_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TA_PWO_AMOUNT_DETAIL_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_PWO_AMOUNT_DETAIL_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_ERROR_LOG_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TA_ERROR_LOG_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_ERROR_LOG_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_BATCH_ERROR_LOG_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TA_BATCH_ERROR_LOG_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_BATCH_ERROR_LOG_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_LOAN_MISCELLAN_OPERATIONS_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TC_LOAN_MISCELLAN_OPERATIONS_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_LOAN_MISCELLAN_OPERATIONS_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_MISCELLAN_OPERATIONS_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TA_LOAN_MISCELLAN_OPERATIONS_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_MISCELLAN_OPERATIONS_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_TRAN_FOLIO_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_TRAN_FOLIO_DETAIL_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TA_TRAN_FOLIO_DETAIL_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_TRAN_FOLIO_DETAIL_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_OPERATION_CLEAR_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TA_LOAN_OPERATION_CLEAR_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_OPERATION_CLEAR_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_OPERATION_REF_PAYMENT_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TA_LOAN_OPERATION_REF_PAYMENT_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_OPERATION_REF_PAYMENT_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_OPERATION_VOID_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TA_LOAN_OPERATION_VOID_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_OPERATION_VOID_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_TOKEN_VOID_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TA_LOAN_TOKEN_VOID_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_TOKEN_VOID_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_DAY_TYPE_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TC_DAY_TYPE_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_DAY_TYPE_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_TMP_LOAN_PROCESS_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TA_TMP_LOAN_PROCESS_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_TMP_LOAN_PROCESS_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_INTEREST_DETAIL_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TA_LOAN_INTEREST_DETAIL_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TA_LOAN_INTEREST_DETAIL_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TH_PWO_AMOUNT_DETAIL_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TH_PWO_AMOUNT_DETAIL_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TH_PWO_AMOUNT_DETAIL_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TH_PAYMENT_SCHEDULE_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TH_PAYMENT_SCHEDULE_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TH_PAYMENT_SCHEDULE_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_CONCEPT_EXPRESSION_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TC_CONCEPT_EXPRESSION_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_CONCEPT_EXPRESSION_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_ALLOWED_PERIOD_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TC_ALLOWED_PERIOD_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TC_ALLOWED_PERIOD_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TH_PAYMENT_SCHEDULE_FEE_CRTB_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/indexes/HU-00001/SC_CREDIT/TH_PAYMENT_SCHEDULE_FEE_CRT_INDEX_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001/SC_CREDIT/TH_PAYMENT_SCHEDULE_FEE_ALTB_ADD_CONST_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/sequences/HU-00001/SC_CREDIT/SE_ERROR_LOG_CR_SEQ_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/sequences/HU-00001/SC_CREDIT/SE_LOAN_OPERATION_ID_CR_SEQ_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/sequences/HU-00001/SC_CREDIT/SE_LOAN_SCORING_DET_ID_CR_SEQ_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/sequences/HU-00001/SC_CREDIT/SE_PAYMENT_TYPE_ID_CR_SEQ_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/sequences/HU-00001/SC_CREDIT/SE_BATCH_ERROR_LOG_CR_SEQ_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/sequences/HU-00001/SC_CREDIT/SE_LOAN_BALANCE_ID_CR_SEQ_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/sequences/HU-00001/SC_CREDIT/SE_LOAN_OPERATION_CLEAR_ID_CR_SEQ_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/sequences/HU-00001/SC_CREDIT/SE_LOAN_OPERATION_REF_PAYMENT_ID_CR_SEQ_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/sequences/HU-00001/SC_CREDIT/SE_LOAN_OPERATION_VOID_ID_CR_SEQ_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/sequences/HU-00001/SC_CREDIT/SE_LOAN_STATUS_DETAIL_CR_SEQ_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/sequences/HU-00001/SC_CREDIT/SE_LOAN_TOKEN_VOID_ID_CR_SEQ_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/sequences/HU-00001/SC_CREDIT/SE_LOAN_ID_CR_SEQ_HU-00001.xml" context="from_ErwinModel"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/packages/HU-00001/xml/SC_CREDIT/PA_TYPES/PA_TYPES_CRPKG_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_ERROR_LOG/SP_ERROR_LOG_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_BATCH_ERROR_LOG/SP_BATCH_ERROR_LOG_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/functions/HU-00001/xml/SC_CREDIT/FN_GET_NEXT_LOAN_ID/FN_GET_NEXT_LOAN_ID_CRFN_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_SEL_BALANCE_LOAN/SP_SEL_BALANCE_LOAN_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_INS_LOAN_OPERATION_CLEAR/SP_INS_LOAN_OPERATION_CLEAR_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_SYNC_BUSINESS_UNIT/SP_SYNC_BUSINESS_UNIT_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_BTC_UPD_LOAN_STATUS_DETAIL/SP_BTC_UPD_LOAN_STATUS_DETAIL_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_SEL_CONCEPT_SIGN/SP_SEL_CONCEPT_SIGN_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_UPD_PAYMENT_SCHEDULE_PAYOFF/SP_UPD_PAYMENT_SCHEDULE_PAYOFF_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_BTC_GEN_OPERATION_BALANCE/SP_BTC_GEN_OPERATION_BALANCE_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_SEL_ACCRUED_PAYMENT_INTEREST/SP_SEL_ACCRUED_PAYMENT_INTEREST_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_UPD_PAYMENT_INTEREST/SP_UPD_PAYMENT_INTEREST_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_BTC_INS_PWO_AMOUNT_DETAIL/SP_BTC_INS_PWO_AMOUNT_DETAIL_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_LOAN_LAST_DETAIL/SP_LOAN_LAST_DETAIL_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_EXE_CUSTOMER_INFO/SP_EXE_CUSTOMER_INFO_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/functions/HU-00001/xml/SC_CREDIT/FN_SEL_LOAN_INTEREST_JSON/FN_SEL_LOAN_INTEREST_JSON_CRFN_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/functions/HU-00001/xml/SC_CREDIT/FN_SEL_LOAN_BALANCE_DET_JSON/FN_SEL_LOAN_BALANCE_DET_JSON_CRFN_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_TMP_BTC_SEL_CHANGE_DEFAULT/SP_TMP_BTC_SEL_CHANGE_DEFAULT_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_SEL_LOAN_PRODUCT/SP_SEL_LOAN_PRODUCT_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_BTC_UPD_LOAN/SP_BTC_UPD_LOAN_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_SYNC_SUBTERM_TYPE/SP_SYNC_SUBTERM_TYPE_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_INS_LOAN_REF_PAYMEN/SP_INS_LOAN_REF_PAYMEN_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_BTC_INS_LOAN_STATUS/SP_BTC_INS_LOAN_STATUS_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_BTC_INS_DAILY_INTEREST/SP_BTC_INS_DAILY_INTEREST_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_BTC_INS_LOAN_STATUS_DETAIL/SP_BTC_INS_LOAN_STATUS_DETAIL_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_BTC_EXE_OPERATION_BALANCE/SP_BTC_EXE_OPERATION_BALANCE_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_BTC_EXE_DELINQ_NEXT_INSTALL/SP_BTC_EXE_DELINQ_NEXT_INSTALL_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_SYNC_TRIGGER/SP_SYNC_TRIGGER_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_TMP_BTC_SEL_DAILY_INTEREST/SP_TMP_BTC_SEL_DAILY_INTEREST_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_SEL_LOAN_DATA/SP_SEL_LOAN_DATA_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_UPD_WOFF/SP_UPD_WOFF_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_BTC_APPLY_DAILY_INTEREST/SP_BTC_APPLY_DAILY_INTEREST_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_BTC_SEL_NO_PAYMENT/SP_BTC_SEL_NO_PAYMENT_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_TMP_BTC_SEL_LATE_FEE/SP_TMP_BTC_SEL_LATE_FEE_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_BTC_APPLY_ACTIONS/SP_BTC_APPLY_ACTIONS_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_DELETE_LOAN/SP_DELETE_LOAN_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_EXE_LOAN_BALANCE_INFO/SP_EXE_LOAN_BALANCE_INFO_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_SEL_LOAN_STATUS/SP_SEL_LOAN_STATUS_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_UPD_LOAN_STATUS_DETAIL/SP_UPD_LOAN_STATUS_DETAIL_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_UPD_LOAN_STATUS/SP_UPD_LOAN_STATUS_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_BTC_GEN_STA_WAI_CLOS/SP_BTC_GEN_STA_WAI_CLOS_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_SEL_LOAN_CONCEPT/SP_SEL_LOAN_CONCEPT_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_SEL_TRIGGER/SP_SEL_TRIGGER_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_BTC_EXE_APPLY_LATE_FEE/SP_BTC_EXE_APPLY_LATE_FEE_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/functions/HU-00001/xml/SC_CREDIT/FN_GET_NEXT_LOAN_BALANCE_ID/FN_GET_NEXT_LOAN_BALANCE_ID_CRFN_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/functions/HU-00001/xml/SC_CREDIT/FN_GET_NEXT_LOAN_OPERATION_ID/FN_GET_NEXT_LOAN_OPERATION_ID_CRFN_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_BTC_GENERATE_SEQUENCE/SP_BTC_GENERATE_SEQUENCE_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_SYNC_ACCRUED_TYPE/SP_SYNC_ACCRUED_TYPE_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_TMP_BTC_SEL_NO_PAYMENT/SP_TMP_BTC_SEL_NO_PAYMENT_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_SYNC_TENDER_TYPE/SP_SYNC_TENDER_TYPE_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_INS_LOAN_OPERATION_VOID/SP_INS_LOAN_OPERATION_VOID_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_SEL_CONCEPT/SP_SEL_CONCEPT_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_SYNC_LOAN_CONCEPT/SP_SYNC_LOAN_CONCEPT_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_SYNC_PRODUCT/SP_SYNC_PRODUCT_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_SYNC_COMPANY/SP_SYNC_COMPANY_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_BTC_GEN_STA_DEF_WOFF/SP_BTC_GEN_STA_DEF_WOFF_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_BTC_SEL_DELINQUENT/SP_BTC_SEL_DELINQUENT_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_SYNC_LOAN_STATUS_TRIGGER/SP_SYNC_LOAN_STATUS_TRIGGER_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_BTC_SEL_DEFAULT_WRITE_OFF/SP_BTC_SEL_DEFAULT_WRITE_OFF_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_SYNC_DAY_TYPES/SP_SYNC_DAY_TYPES_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_BTC_EXE_NO_PAYMENT/SP_BTC_EXE_NO_PAYMENT_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_BTC_EXE_APPLY_FEES/SP_BTC_EXE_APPLY_FEES_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_BTC_SEL_LATE_FEE/SP_BTC_SEL_LATE_FEE_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_BTC_SEL_DAILY_INTEREST/SP_BTC_SEL_DAILY_INTEREST_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_SYNC_PAYMENT_SCHEDULE_STATUS/SP_SYNC_PAYMENT_SCHEDULE_STATUS_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_TMP_BTC_SEL_UNPAID/SP_TMP_BTC_SEL_UNPAID_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_SYNC_LOAN_STATUS/SP_SYNC_LOAN_STATUS_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_SEL_LAST_TENDER_TYP_PAYMENT/SP_SEL_LAST_TENDER_TYP_PAYMENT_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_STATUS_PAYMENT_SCHEDULE/SP_STATUS_PAYMENT_SCHEDULE_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_SYNC_TENDER_CATEGORY_TYPE/SP_SYNC_TENDER_CATEGORY_TYPE_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_BTC_INS_ERROR_LOG/SP_BTC_INS_ERROR_LOG_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_BTC_SEL_UNPAID/SP_BTC_SEL_UNPAID_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_SYNC_COUNTRY/SP_SYNC_COUNTRY_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_LOAN_DATA_LAST_DETAIL/SP_LOAN_DATA_LAST_DETAIL_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_BTC_SEL_CHANGE_DEFAULT/SP_BTC_SEL_CHANGE_DEFAULT_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_SYNC_OPERATION_TYPE/SP_SYNC_OPERATION_TYPE_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_EXE_AMORTIZATION/SP_EXE_AMORTIZATION_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_SEL_LOAN_STATUS_CLOSE/SP_SEL_LOAN_STATUS_CLOSE_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_SYNC_TERM_TYPE/SP_SYNC_TERM_TYPE_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_EXE_AMORTIZATION_RECALC/SP_EXE_AMORTIZATION_RECALC_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_SEL_OPERATION_REF_PAYMENT/SP_SEL_OPERATION_REF_PAYMENT_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_SEL_PAYMENT_SCHEDULE/SP_SEL_PAYMENT_SCHEDULE_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_BTC_SEL_WAITING_CLOSED/SP_BTC_SEL_WAITING_CLOSED_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_BTC_APPLY_FEES/SP_BTC_APPLY_FEES_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_SYNC_LOAN_CONCEPT_TYPE/SP_SYNC_LOAN_CONCEPT_TYPE_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_BTC_EXE_CHANGE_DEFAULT/SP_BTC_EXE_CHANGE_DEFAULT_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_INS_LOAN_OP_TENDER/SP_INS_LOAN_OP_TENDER_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00001/xml/SC_CREDIT/SP_SYNC_PAYMENT_TYPE/SP_SYNC_PAYMENT_TYPE_CRSP_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/packages/HU-00001/xml/SC_CREDIT/PA_EXE_LOAN_DISBURSEMENT/PA_EXE_LOAN_DISBURSEMENT_CRPKG_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/packages/HU-00001/xml/SC_CREDIT/PA_EXE_LOAN_ORIGINATION/PA_EXE_LOAN_ORIGINATION_CRPKG_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/packages/HU-00001/xml/SC_CREDIT/PA_EXE_OUTSTANDING_BALANCE/PA_EXE_OUTSTANDING_BALANCE_CRPKG_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/packages/HU-00001/xml/SC_CREDIT/PA_LOAN_BALANCE/PA_LOAN_BALANCE_CRPKG_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/packages/HU-00001/xml/SC_CREDIT/PA_LOAN_CANCEL/PA_LOAN_CANCEL_CRPKG_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/packages/HU-00001/xml/SC_CREDIT/PA_MISCELLANEOUS_OPERATIONS/PA_MISCELLANEOUS_OPERATIONS_CRPKG_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/packages/HU-00001/xml/SC_CREDIT/PA_TMP_LOAN_PROCESS/PA_TMP_LOAN_PROCESS_CRPKG_HU-00001.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/types/HU-00001/xml/SC_CREDIT/TYP_REC_BTC_BALANCE/TYP_REC_BTC_BALANCE_CRT_TYPE_HU-00001_NEW.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/types/HU-00001/xml/SC_CREDIT/TYP_REC_BTC_DETAIL/TYP_REC_BTC_DETAIL_CRT_TYPE_HU-00001_NEW.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/types/HU-00001/xml/SC_CREDIT/TYP_REC_BTC_ERROR/TYP_REC_BTC_ERROR_CRT_TYPE_HU-00001_NEW.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/types/HU-00001/xml/SC_CREDIT/TYP_REC_BTC_INTEREST/TYP_REC_BTC_INTEREST_CRT_TYPE_HU-00001_NEW.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/types/HU-00001/xml/SC_CREDIT/TYP_REC_BTC_LOAN/TYP_REC_BTC_LOAN_CRT_TYPE_HU-00001_NEW.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/types/HU-00001/xml/SC_CREDIT/TYP_REC_BTC_OPERATION/TYP_REC_BTC_OPERATION_CRT_TYPE_HU-00001_NEW.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/types/HU-00001/xml/SC_CREDIT/TYP_REC_BTC_STATUS/TYP_REC_BTC_STATUS_CRT_TYPE_HU-00001_NEW.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/types/HU-00001/xml/SC_CREDIT/TYP_REC_BTC_STATUS_DETAIL/TYP_REC_BTC_STATUS_DETAIL_CRT_TYPE_HU-00001_NEW.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/types/HU-00001/xml/SC_CREDIT/TYP_REC_BTC_STATUS_PWO/TYP_REC_BTC_STATUS_PWO_CRT_TYPE_HU-00001_NEW.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/types/HU-00001/xml/SC_CREDIT/TYP_REC_LOAN_OP_TENDER/TYP_REC_LOAN_OP_TENDER_CRT_TYPE_HU-00001_NEW.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/types/HU-00001/xml/SC_CREDIT/TYP_TAB_BTC_BALANCE/TYP_TAB_BTC_BALANCE_CRT_TYPE_HU-00001_ISTABLE_NEW.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/types/HU-00001/xml/SC_CREDIT/TYP_TAB_BTC_DETAIL/TYP_TAB_BTC_DETAIL_CRT_TYPE_HU-00001_ISTABLE_NEW.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/types/HU-00001/xml/SC_CREDIT/TYP_TAB_BTC_ERROR/TYP_TAB_BTC_ERROR_CRT_TYPE_HU-00001_ISTABLE_NEW.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/types/HU-00001/xml/SC_CREDIT/TYP_TAB_BTC_INTEREST/TYP_TAB_BTC_INTEREST_CRT_TYPE_HU-00001_ISTABLE_NEW.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/types/HU-00001/xml/SC_CREDIT/TYP_TAB_BTC_LOAN/TYP_TAB_BTC_LOAN_CRT_TYPE_HU-00001_ISTABLE_NEW.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/types/HU-00001/xml/SC_CREDIT/TYP_TAB_BTC_OPERATION/TYP_TAB_BTC_OPERATION_CRT_TYPE_HU-00001_ISTABLE_NEW.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/types/HU-00001/xml/SC_CREDIT/TYP_TAB_BTC_STATUS/TYP_TAB_BTC_STATUS_CRT_TYPE_HU-00001_ISTABLE_NEW.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/types/HU-00001/xml/SC_CREDIT/TYP_TAB_BTC_STATUS_DETAIL/TYP_TAB_BTC_STATUS_DETAIL_CRT_TYPE_HU-00001_ISTABLE_NEW.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/types/HU-00001/xml/SC_CREDIT/TYP_TAB_BTC_STATUS_PWO/TYP_TAB_BTC_STATUS_PWO_CRT_TYPE_HU-00001_ISTABLE_NEW.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/types/HU-00001/xml/SC_CREDIT/TYP_TAB_LOAN_OP_TENDER/TYP_TAB_LOAN_OP_TENDER_CRT_TYPE_HU-00001_ISTABLE_NEW.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/procedures/HU-00002-PATCH/xml/SC_CREDIT/SP_SYNC_COUNTRY/SP_SYNC_COUNTRY_UPDSP_HU-00002-PATCH.xml"/>
+    <include file="src/main/resources/db/schema/changelog/DDL/tables/HU-00001-PATCH/SC_CREDIT/TC_COUNTRY_ALTB_COLUMNS_HU-00001-PATCH.xml"/>
+</databaseChangeLog>

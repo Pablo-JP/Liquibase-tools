@@ -1,0 +1,95 @@
+CREATE OR REPLACE  PROCEDURE SC_CREDIT.SP_BTC_INS_PWO_AMOUNT_DETAIL 
+   (
+   PA_FI_LOAN_ID               IN SC_CREDIT.TA_PWO_AMOUNT_DETAIL.FI_LOAN_ID%TYPE
+  ,PA_FI_ADMIN_CENTER_ID       IN SC_CREDIT.TA_PWO_AMOUNT_DETAIL.FI_ADMIN_CENTER_ID%TYPE
+  ,PA_FN_PAY_OFF_AMOUNT        IN SC_CREDIT.TA_PWO_AMOUNT_DETAIL.FN_PAY_OFF_AMOUNT%TYPE
+  ,PA_FN_PWO_EXT_PAYMENT       IN SC_CREDIT.TA_PWO_AMOUNT_DETAIL.FN_PWO_EXT_PAYMENT%TYPE
+  ,PA_FN_AMOUNT_PAID           IN SC_CREDIT.TA_PWO_AMOUNT_DETAIL.FN_AMOUNT_PAID%TYPE
+  ,PA_FN_PWO_MIN_PAYMENT       IN SC_CREDIT.TA_PWO_AMOUNT_DETAIL.FN_PWO_MIN_PAYMENT%TYPE
+  ,PA_FI_ADD_EXTENSION         IN SC_CREDIT.TA_PWO_AMOUNT_DETAIL.FI_ADD_EXTENSION%TYPE
+  ,PA_FD_PWO_DATE              IN VARCHAR2
+  ,PA_COMMIT                   IN NUMBER
+  ,PA_STATUS_CODE              OUT NUMBER
+  ,PA_STATUS_MSG               OUT VARCHAR2
+   )
+   IS
+    /* **************************************************************
+   * DESCRIPTION: PROCESS TO INSERT IN TABLE TA_PWO_AMOUNT_DETAIL
+   * CREATED DATE: 15/11/2024
+   * CREATOR: IVAN LOPEZ
+   ************************************************************** */
+
+   CSL_0                        CONSTANT SIMPLE_INTEGER := 0;
+   CSL_1                        CONSTANT SIMPLE_INTEGER := 1;
+   CSL_DATE_FORMAT              CONSTANT VARCHAR2(40)   := 'MM/DD/YYYY hh24:mi:ss';
+   CSL_SP                       CONSTANT SIMPLE_INTEGER := 1;
+   CSL_2002                     CONSTANT SIMPLE_INTEGER := -20002;
+   CSL_MSG_SUCCESS              CONSTANT VARCHAR2(20)   := ' SUCCESS';
+   CSL_TA_LOAN_STATUS_DETAIL    CONSTANT VARCHAR2(20)   := ' LOAN_STATUS_DETAIL';
+   CSL_NOT_INSERT               CONSTANT VARCHAR2(20)   := ' NOT_INSERT ';
+   CSL_ADMIN_CENTER_ID          CONSTANT VARCHAR2(20)   := ' ADMIN_CENTER_ID';
+   CSL_LOAN_ID                  CONSTANT VARCHAR2(20)   := ' LOAN_ID';
+   CSL_COMA                     CONSTANT VARCHAR2(20)   := ',';
+   CSL_ARROW                    CONSTANT VARCHAR2(20)   := '->';
+
+   BEGIN
+
+      PA_STATUS_CODE:= CSL_0;
+      PA_STATUS_MSG := CSL_MSG_SUCCESS;
+
+      INSERT INTO SC_CREDIT.TA_PWO_AMOUNT_DETAIL
+                 (FI_LOAN_ID
+                 ,FI_ADMIN_CENTER_ID
+                 ,FN_PAY_OFF_AMOUNT
+                 ,FN_PWO_EXT_PAYMENT
+                 ,FN_AMOUNT_PAID
+                 ,FN_PWO_MIN_PAYMENT
+                 ,FI_ADD_EXTENSION
+                 ,FD_PWO_DATE
+                 ,FC_USER
+                 ,FD_CREATED_DATE
+                 ,FD_MODIFICATION_DATE)
+          VALUES (PA_FI_LOAN_ID
+                 ,PA_FI_ADMIN_CENTER_ID
+                 ,PA_FN_PAY_OFF_AMOUNT
+                 ,PA_FN_PWO_EXT_PAYMENT
+                 ,PA_FN_AMOUNT_PAID
+                 ,PA_FN_PWO_MIN_PAYMENT
+                 ,PA_FI_ADD_EXTENSION
+                 ,TO_DATE(PA_FD_PWO_DATE,CSL_DATE_FORMAT)
+                 ,USER
+                 ,SYSDATE
+                 ,SYSDATE
+                 );
+
+      IF SQL%ROWCOUNT = CSL_0 THEN
+      RAISE_APPLICATION_ERROR(CSL_2002, CSL_TA_LOAN_STATUS_DETAIL || CSL_NOT_INSERT);
+      END IF;
+
+      IF PA_COMMIT = CSL_1 THEN
+         COMMIT;
+      END IF;
+
+      --EXCEPTION HANDLING
+      EXCEPTION
+      WHEN OTHERS THEN
+      ROLLBACK;
+      PA_STATUS_CODE := SQLCODE;
+      PA_STATUS_MSG := SQLERRM || CSL_ARROW || DBMS_UTILITY.FORMAT_ERROR_BACKTRACE;
+
+      SC_CREDIT.SP_BATCH_ERROR_LOG(UTL_CALL_STACK.SUBPROGRAM(CSL_1)(CSL_SP)
+                                  ,SQLCODE
+                                  ,SQLERRM
+                                  ,DBMS_UTILITY.FORMAT_ERROR_BACKTRACE
+                                  ,CSL_1 --PA_FI_TRANSACTION
+                                  ,CSL_LOAN_ID || PA_FI_LOAN_ID || CSL_COMA
+                                  ||CSL_ADMIN_CENTER_ID ||PA_FI_ADMIN_CENTER_ID);
+
+END SP_BTC_INS_PWO_AMOUNT_DETAIL;
+
+/
+
+GRANT EXECUTE ON SC_CREDIT.SP_BTC_INS_PWO_AMOUNT_DETAIL TO USRNCPCREDIT1
+/
+GRANT EXECUTE ON SC_CREDIT.SP_BTC_INS_PWO_AMOUNT_DETAIL TO USRBTCCREDIT1
+/

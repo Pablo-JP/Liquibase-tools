@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd ">
+    <changeSet id="HU-00001_TAG_CRTB_TA_LOAN_SCORING_DETAIL" author="1048168">
+        <tagDatabase tag="HU-00001"/>
+    </changeSet>
+    <changeSet id="HU-00001_ID_CRTB_TA_LOAN_SCORING_DETAIL" author="1048168">
+        <createTable tablespace="USERS" schemaName="SC_CREDIT" tableName="TA_LOAN_SCORING_DETAIL">
+            <column name="FI_LOAN_ID" type="NUMBER(15)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FI_ADMIN_CENTER_ID" type="NUMBER(8)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FI_LOAN_SCORING_DETAIL_ID" type="NUMBER(15)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FI_OPERATION_TYPE_ID" type="NUMBER(5)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FI_TRANSACTION" type="NUMBER(33)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FN_OPERATION_AMOUNT" type="NUMBER(12,2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FD_OPERATION_DATE" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FI_STATUS" type="NUMBER(3)" defaultValueComputed="1">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FC_END_USER" type="VARCHAR2(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FC_UUID_TRACKING" type="VARCHAR2(36)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FC_DEVICE_ID" type="VARCHAR2(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FC_IP_ADDRESS" type="VARCHAR2(39)" defaultValueComputed="'127.0.0.1'">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FC_USER" type="VARCHAR2(30)" defaultValueComputed="USER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FD_CREATED_DATE" type="DATE" defaultValueComputed="SYSDATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FD_MODIFICATION_DATE" type="DATE" defaultValueComputed="SYSDATE">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <modifySql>
+            <append value=" PARTITION BY RANGE (FI_ADMIN_CENTER_ID) ( PARTITION PAR_LOANSCORINGDTAIL_P1 VALUES LESS THAN (401) TABLESPACE USERS,  PARTITION PAR_LOANSCORINGDTAIL_P2 VALUES LESS THAN (802) TABLESPACE USERS,  PARTITION PAR_LOANSCORINGDTAIL_P3 VALUES LESS THAN (1203) TABLESPACE USERS,  PARTITION PAR_LOANSCORINGDTAIL_P4 VALUES LESS THAN (1604) TABLESPACE USERS,  PARTITION PAR_LOANSCORINGDTAIL_P5 VALUES LESS THAN (2005) TABLESPACE USERS,  PARTITION PAR_LOANSCORINGDTAIL_P6 VALUES LESS THAN (2406) TABLESPACE USERS,  PARTITION PAR_LOANSCORINGDTAIL_P7 VALUES LESS THAN (2807) TABLESPACE USERS,  PARTITION PAR_LOANSCORINGDTAIL_P8 VALUES LESS THAN (3208) TABLESPACE USERS,  PARTITION PAR_LOANSCORINGDTAIL_P9 VALUES LESS THAN (3609) TABLESPACE USERS,  PARTITION PAR_LOANSCORINGDTAIL_P10 VALUES LESS THAN (4010) TABLESPACE USERS,  PARTITION PAR_LOANSCORINGDTAIL_P11 VALUES LESS THAN (4411) TABLESPACE USERS,  PARTITION PAR_LOANSCORINGDTAIL_P12 VALUES LESS THAN (4812) TABLESPACE USERS,  PARTITION PAR_LOANSCORINGDTAIL_P13 VALUES LESS THAN (5213) TABLESPACE USERS,  PARTITION PAR_LOANSCORINGDTAIL_P14 VALUES LESS THAN (5614) TABLESPACE USERS,  PARTITION PAR_LOANSCORINGDTAIL_P15 VALUES LESS THAN (6015) TABLESPACE USERS,  PARTITION PAR_LOANSCORINGDTAIL_P16 VALUES LESS THAN (6416) TABLESPACE USERS,  PARTITION PAR_LOANSCORINGDTAIL_P17 VALUES LESS THAN (6817) TABLESPACE USERS,  PARTITION PAR_LOANSCORINGDTAIL_P18 VALUES LESS THAN (7218) TABLESPACE USERS,  PARTITION PAR_LOANSCORINGDTAIL_P19 VALUES LESS THAN (7619) TABLESPACE USERS,  PARTITION PAR_LOANSCORINGDTAIL_P20 VALUES LESS THAN (8020) TABLESPACE USERS,  PARTITION PAR_LOANSCORINGDTAIL_P21 VALUES LESS THAN (8421) TABLESPACE USERS,  PARTITION PAR_LOANSCORINGDTAIL_P22 VALUES LESS THAN (8822) TABLESPACE USERS,  PARTITION PAR_LOANSCORINGDTAIL_P23 VALUES LESS THAN (9223) TABLESPACE USERS,  PARTITION PAR_LOANSCORINGDTAIL_P24 VALUES LESS THAN (9624) TABLESPACE USERS,  PARTITION PAR_LOANSCORINGDTAIL_P25 VALUES LESS THAN (10025) TABLESPACE USERS,  PARTITION PAR_LOANSCORINGDTAIL_P26 VALUES LESS THAN (10426) TABLESPACE USERS) ENABLE ROW MOVEMENT "/>
+        </modifySql>
+    </changeSet>
+    <changeSet id="HU-00001_ID_REMARKS_TA_LOAN_SCORING_DETAIL" author="1048168">
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_SCORING_DETAIL" columnName="FI_LOAN_ID" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_SCORING_DETAIL" columnName="FI_ADMIN_CENTER_ID" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_SCORING_DETAIL" columnName="FI_LOAN_SCORING_DETAIL_ID" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_SCORING_DETAIL" columnName="FI_OPERATION_TYPE_ID" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_SCORING_DETAIL" columnName="FI_TRANSACTION" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_SCORING_DETAIL" columnName="FN_OPERATION_AMOUNT" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_SCORING_DETAIL" columnName="FD_OPERATION_DATE" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_SCORING_DETAIL" columnName="FI_STATUS" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_SCORING_DETAIL" columnName="FC_END_USER" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_SCORING_DETAIL" columnName="FC_UUID_TRACKING" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_SCORING_DETAIL" columnName="FC_DEVICE_ID" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_SCORING_DETAIL" columnName="FC_IP_ADDRESS" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_SCORING_DETAIL" columnName="FC_USER" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_SCORING_DETAIL" columnName="FD_CREATED_DATE" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_LOAN_SCORING_DETAIL" columnName="FD_MODIFICATION_DATE" remarks=""/>
+        <rollback/>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd ">
+    <changeSet id="HU-00001_TAG_CRTB_TH_PAYMENT_SCHEDULE" author="1048168">
+        <tagDatabase tag="HU-00001"/>
+    </changeSet>
+    <changeSet id="HU-00001_ID_CRTB_TH_PAYMENT_SCHEDULE" author="1048168">
+        <createTable tablespace="USERS" schemaName="SC_CREDIT" tableName="TH_PAYMENT_SCHEDULE">
+            <column name="FI_LOAN_ID" type="NUMBER(15)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FI_ADMIN_CENTER_ID" type="NUMBER(8)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FI_PAYMENT_SCHEDULE_ID" type="NUMBER(8)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FI_LOAN_OPERATION_ID" type="NUMBER(15)" defaultValueComputed="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FI_PAYMENT_NUMBER_ID" type="NUMBER(3)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FN_PAYMENT_AMOUNT" type="NUMBER(12,2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FN_PAYMENT_BALANCE" type="NUMBER(12,2)" defaultValueComputed="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FI_SCHEDULE_TYPE_ID" type="NUMBER(3)" defaultValueComputed="1">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FD_DUE_DATE" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FI_PMT_SCHEDULE_STATUS_ID" type="NUMBER(3)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FD_PAYMENT_DATE" type="DATE">
+                <constraints nullable="true"/>
+            </column>
+            <column name="FI_STATUS" type="NUMBER(2)" defaultValueComputed="1">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FI_PERIOD_DAYS" type="NUMBER(3)" defaultValueComputed="0.0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FN_INTEREST_AMOUNT" type="NUMBER(12,2)" defaultValueComputed="0.0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FN_PRINCIPAL_PAYMENT_AMOUNT" type="NUMBER(12,2)" defaultValueComputed="0.0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FN_OUTSTANDING_BALANCE" type="NUMBER(12,2)" defaultValueComputed="0.0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FC_USER" type="VARCHAR2(30)" defaultValueComputed="USER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FD_CREATED_DATE" type="DATE" defaultValueComputed="SYSDATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FD_MODIFICATION_DATE" type="DATE" defaultValueComputed="SYSDATE">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <modifySql>
+            <append value=" PARTITION BY RANGE (FI_ADMIN_CENTER_ID) ( PARTITION PAR_HPYMTSCHEDULE_P1 VALUES LESS THAN (351) TABLESPACE USERS,  PARTITION PAR_HPYMTSCHEDULE_P2 VALUES LESS THAN (702) TABLESPACE USERS,  PARTITION PAR_HPYMTSCHEDULE_P3 VALUES LESS THAN (1053) TABLESPACE USERS,  PARTITION PAR_HPYMTSCHEDULE_P4 VALUES LESS THAN (1404) TABLESPACE USERS,  PARTITION PAR_HPYMTSCHEDULE_P5 VALUES LESS THAN (1755) TABLESPACE USERS,  PARTITION PAR_HPYMTSCHEDULE_P6 VALUES LESS THAN (2106) TABLESPACE USERS,  PARTITION PAR_HPYMTSCHEDULE_P7 VALUES LESS THAN (2457) TABLESPACE USERS,  PARTITION PAR_HPYMTSCHEDULE_P8 VALUES LESS THAN (2808) TABLESPACE USERS,  PARTITION PAR_HPYMTSCHEDULE_P9 VALUES LESS THAN (3159) TABLESPACE USERS,  PARTITION PAR_HPYMTSCHEDULE_P10 VALUES LESS THAN (3510) TABLESPACE USERS,  PARTITION PAR_HPYMTSCHEDULE_P11 VALUES LESS THAN (3861) TABLESPACE USERS,  PARTITION PAR_HPYMTSCHEDULE_P12 VALUES LESS THAN (4212) TABLESPACE USERS,  PARTITION PAR_HPYMTSCHEDULE_P13 VALUES LESS THAN (4563) TABLESPACE USERS,  PARTITION PAR_HPYMTSCHEDULE_P14 VALUES LESS THAN (4914) TABLESPACE USERS,  PARTITION PAR_HPYMTSCHEDULE_P15 VALUES LESS THAN (5265) TABLESPACE USERS,  PARTITION PAR_HPYMTSCHEDULE_P16 VALUES LESS THAN (5616) TABLESPACE USERS,  PARTITION PAR_HPYMTSCHEDULE_P17 VALUES LESS THAN (5967) TABLESPACE USERS,  PARTITION PAR_HPYMTSCHEDULE_P18 VALUES LESS THAN (6318) TABLESPACE USERS,  PARTITION PAR_HPYMTSCHEDULE_P19 VALUES LESS THAN (6669) TABLESPACE USERS,  PARTITION PAR_HPYMTSCHEDULE_P20 VALUES LESS THAN (7020) TABLESPACE USERS,  PARTITION PAR_HPYMTSCHEDULE_P21 VALUES LESS THAN (7371) TABLESPACE USERS,  PARTITION PAR_HPYMTSCHEDULE_P22 VALUES LESS THAN (7722) TABLESPACE USERS,  PARTITION PAR_HPYMTSCHEDULE_P23 VALUES LESS THAN (8073) TABLESPACE USERS,  PARTITION PAR_HPYMTSCHEDULE_P24 VALUES LESS THAN (8424) TABLESPACE USERS,  PARTITION PAR_HPYMTSCHEDULE_P25 VALUES LESS THAN (8775) TABLESPACE USERS,  PARTITION PAR_HPYMTSCHEDULE_P26 VALUES LESS THAN (9126) TABLESPACE USERS,  PARTITION PAR_HPYMTSCHEDULE_P27 VALUES LESS THAN (9477) TABLESPACE USERS,  PARTITION PAR_HPYMTSCHEDULE_P28 VALUES LESS THAN (9828) TABLESPACE USERS,  PARTITION PAR_HPYMTSCHEDULE_P29 VALUES LESS THAN (10179) TABLESPACE USERS,  PARTITION PAR_HPYMTSCHEDULE_P30 VALUES LESS THAN (10530) TABLESPACE USERS) ENABLE ROW MOVEMENT "/>
+        </modifySql>
+    </changeSet>
+    <changeSet id="HU-00001_ID_REMARKS_TH_PAYMENT_SCHEDULE" author="1048168">
+        <setTableRemarks schemaName="SC_CREDIT" tableName="TH_PAYMENT_SCHEDULE" remarks="Table History with the scheduled payments over a loan"/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TH_PAYMENT_SCHEDULE" columnName="FI_LOAN_ID" remarks="Description of the record"/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TH_PAYMENT_SCHEDULE" columnName="FI_ADMIN_CENTER_ID" remarks="Indicates if the record is valid or invalid"/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TH_PAYMENT_SCHEDULE" columnName="FI_PAYMENT_SCHEDULE_ID" remarks="ID of the record"/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TH_PAYMENT_SCHEDULE" columnName="FI_LOAN_OPERATION_ID" remarks="Operation ID when the payment schedule is updated"/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TH_PAYMENT_SCHEDULE" columnName="FI_PAYMENT_NUMBER_ID" remarks="Id of the record"/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TH_PAYMENT_SCHEDULE" columnName="FN_PAYMENT_AMOUNT" remarks="Amount payed or to be paid in the date FD_DUE_DATE"/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TH_PAYMENT_SCHEDULE" columnName="FN_PAYMENT_BALANCE" remarks="Loan's balance after the payment in the FD_DUE_DATE"/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TH_PAYMENT_SCHEDULE" columnName="FI_SCHEDULE_TYPE_ID" remarks="Catalog of scheduled type"/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TH_PAYMENT_SCHEDULE" columnName="FD_DUE_DATE" remarks="Date when the payment must be made"/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TH_PAYMENT_SCHEDULE" columnName="FI_PMT_SCHEDULE_STATUS_ID" remarks="Status of the Payment Number"/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TH_PAYMENT_SCHEDULE" columnName="FD_PAYMENT_DATE" remarks="Date when the payment really was done"/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TH_PAYMENT_SCHEDULE" columnName="FI_STATUS" remarks="1-the record can be taken into account, 0-the record is not a valid one"/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TH_PAYMENT_SCHEDULE" columnName="FI_PERIOD_DAYS" remarks="Days in the period"/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TH_PAYMENT_SCHEDULE" columnName="FN_INTEREST_AMOUNT" remarks="Interest amount"/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TH_PAYMENT_SCHEDULE" columnName="FN_PRINCIPAL_PAYMENT_AMOUNT" remarks="Principal paymeny amount"/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TH_PAYMENT_SCHEDULE" columnName="FN_OUTSTANDING_BALANCE" remarks="Outstanding Balance"/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TH_PAYMENT_SCHEDULE" columnName="FC_USER" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TH_PAYMENT_SCHEDULE" columnName="FD_CREATED_DATE" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TH_PAYMENT_SCHEDULE" columnName="FD_MODIFICATION_DATE" remarks=""/>
+        <rollback/>
+    </changeSet>
+</databaseChangeLog>

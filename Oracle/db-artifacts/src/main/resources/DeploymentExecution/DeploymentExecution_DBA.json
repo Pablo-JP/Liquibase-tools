@@ -1,0 +1,17 @@
+[
+  {
+    "fileName": "sc_credit_sinTBS_V2.xml",
+    "deploymentOrder" : 1,
+    "action" : "new"
+  },
+  {
+    "fileName": "objectsOracle.sql",
+    "deploymentOrder" : 1,
+    "action" : "new"
+  },
+  {
+    "fileName": "type.sql",
+    "deploymentOrder" : 2,
+    "action" : "new"
+  }
+]

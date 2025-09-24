@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd ">
+    <changeSet id="HU-00001_TAG_CRTB_TA_ERROR_LOG" author="1048168">
+        <tagDatabase tag="HU-00001"/>
+    </changeSet>
+    <changeSet id="HU-00001_ID_CRTB_TA_ERROR_LOG" author="1048168">
+        <createTable tablespace="USERS" schemaName="SC_CREDIT" tableName="TA_ERROR_LOG">
+            <column name="FI_LOG_ID" type="NUMBER(15)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FD_ERROR" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FC_PROCESS" type="VARCHAR2(80)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FI_SQL_CODE" type="NUMBER(5)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="FC_SQL_ERRM" type="VARCHAR2(1000)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="FC_BACKTRACE" type="VARCHAR2(600)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="FC_UUID_TRACKING" type="VARCHAR2(36)" defaultValueComputed="' '">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FC_ADITIONAL" type="VARCHAR2(500)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="FI_MONTH" type="NUMBER(2)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="FC_USER" type="VARCHAR2(30)" defaultValueComputed="USER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FD_CREATED_DATE" type="DATE" defaultValueComputed="SYSDATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FD_MODIFICATION_DATE" type="DATE" defaultValueComputed="SYSDATE">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <modifySql>
+            <replace replace="FI_MONTH NUMBER(2)" with="FI_MONTH NUMBER(2) GENERATED ALWAYS AS (EXTRACT(MONTH FROM FD_ERROR)) VIRTUAL"/>
+        </modifySql>
+        <modifySql>
+            <replace replace="FI_MONTH NUMBER( 2 )" with="FI_MONTH NUMBER(2) GENERATED ALWAYS AS (EXTRACT(MONTH FROM FD_ERROR)) VIRTUAL"/>
+        </modifySql>
+        <modifySql>
+            <replace replace="FI_MONTH NUMBER( 2)" with="FI_MONTH NUMBER(2) GENERATED ALWAYS AS (EXTRACT(MONTH FROM FD_ERROR)) VIRTUAL"/>
+        </modifySql>
+        <modifySql>
+            <replace replace="FI_MONTH NUMBER(2 )" with="FI_MONTH NUMBER(2) GENERATED ALWAYS AS (EXTRACT(MONTH FROM FD_ERROR)) VIRTUAL"/>
+        </modifySql>
+        <modifySql>
+            <replace replace="FI_MONTH  NUMBER(2)" with="FI_MONTH NUMBER(2) GENERATED ALWAYS AS (EXTRACT(MONTH FROM FD_ERROR)) VIRTUAL"/>
+        </modifySql>
+        <modifySql>
+            <append value=" PARTITION BY RANGE (FI_MONTH) ( PARTITION PAR_MONTH_1 VALUES LESS THAN (2) TABLESPACE USERS,  PARTITION PAR_MONTH_2 VALUES LESS THAN (3) TABLESPACE USERS,  PARTITION PAR_MONTH_3 VALUES LESS THAN (4) TABLESPACE USERS,  PARTITION PAR_MONTH_4 VALUES LESS THAN (5) TABLESPACE USERS,  PARTITION PAR_MONTH_5 VALUES LESS THAN (6) TABLESPACE USERS,  PARTITION PAR_MONTH_6 VALUES LESS THAN (7) TABLESPACE USERS,  PARTITION PAR_MONTH_7 VALUES LESS THAN (8) TABLESPACE USERS,  PARTITION PAR_MONTH_8 VALUES LESS THAN (9) TABLESPACE USERS,  PARTITION PAR_MONTH_9 VALUES LESS THAN (10) TABLESPACE USERS,  PARTITION PAR_MONTH_10 VALUES LESS THAN (11) TABLESPACE USERS,  PARTITION PAR_MONTH_11 VALUES LESS THAN (12) TABLESPACE USERS,  PARTITION PAR_MONTH_12 VALUES LESS THAN (13) TABLESPACE USERS) ENABLE ROW MOVEMENT "/>
+        </modifySql>
+    </changeSet>
+    <changeSet id="HU-00001_ID_REMARKS_TA_ERROR_LOG" author="1048168">
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_ERROR_LOG" columnName="FI_LOG_ID" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_ERROR_LOG" columnName="FD_ERROR" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_ERROR_LOG" columnName="FC_PROCESS" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_ERROR_LOG" columnName="FI_SQL_CODE" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_ERROR_LOG" columnName="FC_SQL_ERRM" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_ERROR_LOG" columnName="FC_BACKTRACE" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_ERROR_LOG" columnName="FC_UUID_TRACKING" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_ERROR_LOG" columnName="FC_ADITIONAL" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_ERROR_LOG" columnName="FI_MONTH" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_ERROR_LOG" columnName="FC_USER" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_ERROR_LOG" columnName="FD_CREATED_DATE" remarks=""/>
+        <setColumnRemarks schemaName="SC_CREDIT" tableName="TA_ERROR_LOG" columnName="FD_MODIFICATION_DATE" remarks=""/>
+        <rollback/>
+    </changeSet>
+</databaseChangeLog>

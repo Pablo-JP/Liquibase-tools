@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd ">
+    <changeSet id="HU-00001_TAG_ALTB_CONST_TA_LOAN_TOKEN_VOID" author="1048168">
+        <tagDatabase tag="HU-00001"/>
+    </changeSet>
+    <changeSet id="HU-00001_ID_ALTB_PK_PK_LOAN_TOKEN_VOID" author="1048168">
+        <addPrimaryKey columnNames="FI_LOAN_TOKEN_VOID_ID" constraintName="PK_LOAN_TOKEN_VOID" forIndexSchemaName="SC_CREDIT" forIndexName="IXPK_LOAN_TOKEN_VOID" schemaName="SC_CREDIT" tableName="TA_LOAN_TOKEN_VOID"/>
+        <rollback>
+            <dropPrimaryKey constraintName="PK_LOAN_TOKEN_VOID" schemaName="SC_CREDIT" tableName="TA_LOAN_TOKEN_VOID" dropIndex="false"/>
+        </rollback>
+    </changeSet>
+    <changeSet id="HU-00001_ID_ALTB_FK_FK_LOAN_TOKEN_VOID_01" author="1048168">
+        <addForeignKeyConstraint baseTableSchemaName="SC_CREDIT" baseTableName="TA_LOAN_TOKEN_VOID" baseColumnNames="FI_LOAN_OPERATION_VOID_ID" constraintName="FK_LOAN_TOKEN_VOID_01" referencedTableSchemaName="SC_CREDIT" referencedTableName="TA_LOAN_OPERATION_VOID" referencedColumnNames="FI_LOAN_OPERATION_VOID_ID"/>
+        <rollback>
+            <dropForeignKeyConstraint baseTableSchemaName="SC_CREDIT" baseTableName="TA_LOAN_TOKEN_VOID" constraintName="FK_LOAN_TOKEN_VOID_01"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

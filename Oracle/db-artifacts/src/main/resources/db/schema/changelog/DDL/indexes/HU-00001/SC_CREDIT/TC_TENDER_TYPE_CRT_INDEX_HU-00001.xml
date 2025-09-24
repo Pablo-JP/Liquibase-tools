@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd ">
+    <changeSet id="HU-00001_TAG_INDEX_TC_TENDER_TYPE" author="1048168">
+        <tagDatabase tag="HU-00001"/>
+    </changeSet>
+    <changeSet id="HU-00001_ID_INDEX_IXPK_TENDER_TYPE" author="1048168">
+        <createIndex unique="true" tablespace="USERS" indexName="IXPK_TENDER_TYPE" schemaName="SC_CREDIT" tableName="TC_TENDER_TYPE">
+            <column name="FI_TENDER_TYPE_ID"/>
+        </createIndex>
+        <rollback>
+            <dropIndex indexName="IXPK_TENDER_TYPE" schemaName="SC_CREDIT" tableName="TC_TENDER_TYPE"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

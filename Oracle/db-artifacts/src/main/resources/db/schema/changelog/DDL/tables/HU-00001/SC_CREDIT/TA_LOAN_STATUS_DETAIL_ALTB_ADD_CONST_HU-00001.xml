@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd ">
+    <changeSet id="HU-00001_TAG_ALTB_CONST_TA_LOAN_STATUS_DETAIL" author="1048168">
+        <tagDatabase tag="HU-00001"/>
+    </changeSet>
+    <changeSet id="HU-00001_ID_ALTB_PK_PK_LOAN_STATUS_DETAIL" author="1048168">
+        <addPrimaryKey columnNames="FI_REGISTRATION_NUMBER, FI_ADMIN_CENTER_ID, FI_LOAN_ID" constraintName="PK_LOAN_STATUS_DETAIL" forIndexSchemaName="SC_CREDIT" forIndexName="IXPK_LOAN_STATUS_DETAIL" schemaName="SC_CREDIT" tableName="TA_LOAN_STATUS_DETAIL"/>
+        <rollback>
+            <dropPrimaryKey constraintName="PK_LOAN_STATUS_DETAIL" schemaName="SC_CREDIT" tableName="TA_LOAN_STATUS_DETAIL" dropIndex="false"/>
+        </rollback>
+    </changeSet>
+    <changeSet id="HU-00001_ID_ALTB_FK_FK_LOAN_STATUS_DETAIL_01" author="1048168">
+        <addForeignKeyConstraint baseTableSchemaName="SC_CREDIT" baseTableName="TA_LOAN_STATUS_DETAIL" baseColumnNames="FI_LOAN_STATUS_ID" constraintName="FK_LOAN_STATUS_DETAIL_01" referencedTableSchemaName="SC_CREDIT" referencedTableName="TC_LOAN_STATUS" referencedColumnNames="FI_LOAN_STATUS_ID"/>
+        <rollback>
+            <dropForeignKeyConstraint baseTableSchemaName="SC_CREDIT" baseTableName="TA_LOAN_STATUS_DETAIL" constraintName="FK_LOAN_STATUS_DETAIL_01"/>
+        </rollback>
+    </changeSet>
+    <changeSet id="HU-00001_ID_ALTB_FK_FK_LOAN_STATUS_DETAIL_02" author="1048168">
+        <addForeignKeyConstraint baseTableSchemaName="SC_CREDIT" baseTableName="TA_LOAN_STATUS_DETAIL" baseColumnNames="FI_ACTION_DETAIL_ID, FI_LOAN_STATUS_ID" constraintName="FK_LOAN_STATUS_DETAIL_02" referencedTableSchemaName="SC_CREDIT" referencedTableName="TC_ACTION_DETAIL" referencedColumnNames="FI_ACTION_DETAIL_ID, FI_LOAN_STATUS_ID"/>
+        <rollback>
+            <dropForeignKeyConstraint baseTableSchemaName="SC_CREDIT" baseTableName="TA_LOAN_STATUS_DETAIL" constraintName="FK_LOAN_STATUS_DETAIL_02"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

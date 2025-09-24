@@ -1,0 +1,81 @@
+CREATE OR REPLACE  PROCEDURE SC_CREDIT.SP_BTC_SEL_WAITING_CLOSED 
+   (PA_FIRST_CENTER_ID        IN          SC_CREDIT.TA_LOAN.FI_ADMIN_CENTER_ID%TYPE
+   ,PA_END_CENTER_ID          IN          SC_CREDIT.TA_LOAN.FI_ADMIN_CENTER_ID%TYPE
+   ,PA_LOAN_STATUS_DATE       IN          VARCHAR2
+   ,PA_STATUS_ID              IN          SC_CREDIT.TA_LOAN.FI_LOAN_STATUS_ID%TYPE
+   ,PA_STATUS_CODE            OUT         NUMBER
+   ,PA_STATUS_MSG             OUT         VARCHAR2
+   ,PA_CUR_RESULTS            OUT         SC_CREDIT.PA_TYPES.TYP_CURSOR)
+IS
+
+/****************************************************************************************************
+*PROJECT:            PURPOSE_LIFE_LOAN_CYCLE
+*DESCRIPTION:        THIS STORE PROCEDURE EXECUTES A CONSULT ON TA_LOAN TABLE AND RETURNS A CURSOR
+                     WITH THE INFORMATION OF THE LOANS WITH WAITING STATUS
+*PRECONDITIONS:      IT MUST RECEIVE A RANGE OF ADMIN CENTERS, THE DESIRED LOAN STATUS DATE AND
+                     THE STATUS ID
+*CREATOR:            CESAR MEDINA
+*CREATED DATE:       13/11/2024
+*MODIFICATION DATE:  09/01/2025
+*USER MODIFICATION:  AIXA SARMIENTO
+*****************************************************************************************************/
+   CSL_ARROW                      CONSTANT VARCHAR2(5)    := '-->';
+   CSL_DATE_FORMAT                CONSTANT VARCHAR2(12)   := 'MM/DD/YYYY';
+   CSL_0                          CONSTANT SIMPLE_INTEGER := 0;
+   CSL_1                          CONSTANT SIMPLE_INTEGER := 1;
+   CSL_SUCCESS_MESSAGE            CONSTANT VARCHAR2(10)   := 'SUCCESS';
+   CSL_PKG                        CONSTANT SIMPLE_INTEGER := 1;
+   VL_DATE_STATUS                 DATE;
+
+BEGIN
+   PA_CUR_RESULTS      := NULL;
+   PA_STATUS_CODE      := CSL_0;
+   PA_STATUS_MSG       := CSL_SUCCESS_MESSAGE;
+   VL_DATE_STATUS      := TO_DATE(PA_LOAN_STATUS_DATE,CSL_DATE_FORMAT);
+
+   OPEN PA_CUR_RESULTS FOR
+      SELECT A.FI_LOAN_ID
+            ,A.FI_ADMIN_CENTER_ID
+            ,A.FI_COUNTRY_ID
+            ,A.FI_COMPANY_ID
+            ,A.FI_BUSINESS_UNIT_ID
+            ,A.FI_PRODUCT_ID
+            ,A.FC_CUSTOMER_ID
+            ,A.FN_PRINCIPAL_AMOUNT
+            ,A.FN_FINANCE_CHARGE_AMOUNT
+            ,A.FN_PRINCIPAL_BALANCE
+            ,A.FN_FINANCE_CHARGE_BALANCE
+            ,A.FN_ADDITIONAL_CHARGE_BALANCE
+            ,A.FI_CURRENT_BALANCE_SEQ
+            ,A.FI_LOAN_STATUS_ID
+            ,TO_CHAR(A.FD_LOAN_STATUS_DATE,CSL_DATE_FORMAT) AS FD_LOAN_STATUS_DATE
+            ,A.FI_RULE_ID
+            ,NVL(SC_CREDIT.FN_SEL_LOAN_BALANCE_DET_JSON(A.FI_LOAN_ID
+                                                       ,A.FI_ADMIN_CENTER_ID
+                                                       ,A.FI_CURRENT_BALANCE_SEQ
+                                                       ,NULL),'[]')  AS FJ_BALANCE_DETAIL
+        FROM SC_CREDIT.TA_LOAN A
+       WHERE A.FI_LOAN_STATUS_ID = PA_STATUS_ID
+         AND A.FI_ADMIN_CENTER_ID BETWEEN PA_FIRST_CENTER_ID AND PA_END_CENTER_ID
+         AND A.FD_LOAN_STATUS_DATE  <= VL_DATE_STATUS;
+
+EXCEPTION
+    WHEN OTHERS THEN
+        PA_STATUS_CODE      := SQLCODE;
+        PA_STATUS_MSG       := SQLERRM || CSL_ARROW || DBMS_UTILITY.FORMAT_ERROR_BACKTRACE;
+
+        SC_CREDIT.SP_BATCH_ERROR_LOG (UTL_CALL_STACK.SUBPROGRAM(CSL_1)(CSL_PKG)
+                                     ,SQLCODE
+                                     ,SQLERRM
+                                     ,DBMS_UTILITY.FORMAT_ERROR_BACKTRACE
+                                     ,CSL_0
+                                     ,PA_FIRST_CENTER_ID || PA_END_CENTER_ID || PA_LOAN_STATUS_DATE || PA_STATUS_ID
+                                     );
+END SP_BTC_SEL_WAITING_CLOSED;
+
+/
+
+GRANT EXECUTE ON SC_CREDIT.SP_BTC_SEL_WAITING_CLOSED TO USRBTCCREDIT1
+/
+GRANT EXECUTE ON SC_CREDIT.SP_BTC_SEL_WAITING_CLOSED TO USRNCPCREDIT1
+/
